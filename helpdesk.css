@@ -1,0 +1,32 @@
+.help {
+    border: 3px solid #ffff00;
+    -webkit-border-radius: 30px;
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    border-radius: 30px;
+    -moz-animation: pulsate 1s ease-out;
+    -moz-animation-iteration-count: infinite;
+    -o-border-radius: 30px;
+    -o-animation: pulsate 1s ease-out;
+    -o-animation-iteration-count: infinite; 
+    opacity: 0.0;
+}
+
+@-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+
+@-moz-keyframes pulsate {
+    0% {-moz-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-moz-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+
+@-o-keyframes pulsate {
+    0% {-o-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-o-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+
