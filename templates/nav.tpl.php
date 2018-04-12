@@ -27,7 +27,7 @@
 ?>
 
 <div class="comps-wrapper">
-    <div class="page-title h1">Available Computers</div>
+	<h1 class="page-title">Available Computers</h1>
 	
 	<?php if (isset($title) && $title != ""): ?>
 	  <div class="nav-title-wrapper clear-fix linked" id="back" rel="<?php print $back_loc; ?>">
@@ -38,42 +38,41 @@
 	  </div>
 	<?php endif; ?>
 	
-	<div class="row">
-        <?php foreach ($comps as $btn): ?>
-        <div class="comps-nav-btn col-md-12<?php  print $btn['linked'] ? ' linked" id="'.$btn['id'].'" rel="'.$btn['q'].'" scope="'.$loc.'" name="'.$btn['label'].'"' : '"'; ?>>
+	<?php foreach ($comps as $btn): ?>
+  	<div role="button" class="comps-nav-btn clear-fix<?php  print $btn['linked'] ? ' linked" id="'.$btn['id'].'" rel="'.$btn['q'].'" scope="'.$loc.'" name="'.$btn['label'].'"' : '"'; ?> tabindex="0">
 
-		<div class="label <?php if (strlen($btn['label']) > 9) print 'sm'; ?>">
-        <?php print $btn['label']; ?>
-        <?php if(isset($btn['description'])): ?>
-            <div class="description">
-                <?php print $btn['description']; ?>
-            </div>
-        <?php endif; ?>
-        </div>
-
+		<h2 class="label <?php if (strlen($btn['label']) > 9) print 'sm'; ?>">
+			<?php print $btn['label']; ?>
+			<?php if(isset($btn['description'])): ?>
+			  <div class="description">
+				  <?php print $btn['description']; ?>
+			  </div>
+			<?php endif; ?>
+		</h2>
+		
     <?php if ($btn['linked']): ?>
-        <div class="next">&gt;</div>
-    <?php endif; ?>
+		  <div class="next">&gt;</div>
+		<?php endif; ?>
 
-    <div class="status<?php if (!$btn['linked']): ?> right-spacer<?php endif; ?>">
-        <?php if ($btn['pc_t'] > 0): ?>
-            <div class="stat">
-                <span class="stat-label">Windows</span>
-                <span class="available pc_a"> <?php print $btn['pc_a']; ?></span>
-                <span class="total"> / <?php print $btn['pc_t']; ?></span>
-            </div>
-        <?php endif; ?>
-        <?php if ($btn['mac_t'] > 0): ?>
-            <div class="stat">
-                <span class="stat-label">Mac</span>
-                <span class="available mac_a"> <?php print $btn['mac_a']; ?></span>
-                <span class="total"> / <?php print $btn['mac_t']; ?></span>
-            </div>
-        <?php endif; ?>
-    </div>
-</div>
-<?php endforeach; ?>
-    </div>
+		<div class="status<?php if (!$btn['linked']): ?> right-spacer<?php endif; ?>">
+			<h3>Availability</h3>
+		  <?php if ($btn['pc_t'] > 0): ?>
+			  <div class="stat">
+				  <h4 class="stat-label">Windows</h4> 
+				  <span class="available pc_a"> <?php print $btn['pc_a'];?></span>
+				  <span class="total">out of <?php print $btn['pc_t']; ?></span>
+			  </div>
+			<?php endif; ?>
+			<?php if ($btn['mac_t'] > 0): ?>
+			  <div class="stat">
+				  <h4 class="stat-label">Mac</h4> 
+				  <span class="available mac_a"> <?php print $btn['mac_a']; ?></span>
+				  <span class="total"> out of <?php print $btn['mac_t']; ?></span>
+			  </div>
+			<?php endif; ?>
+		</div>
+	</div>
+	<?php endforeach; ?>
 </div>
 
 

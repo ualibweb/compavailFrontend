@@ -69,6 +69,8 @@ a:visited {
 	height: 68px;
 }
 
+
+
 .comps-wrapper .map-title{
 	text-align: center;
 	font-size: 60px;
@@ -79,11 +81,12 @@ a:visited {
   
 }
 
-.comps-nav-btn {
+div.comps-nav-btn {
 	position: relative;
   margin: 10px;
   padding: 20px;
-  min-width: 938px;
+	/*min-width: 900px;*/
+	width: 100%;
   min-height: 150px;
   border: 1px solid #666;
   -webkit-border-radius: 4px;
@@ -100,11 +103,17 @@ a:visited {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#414141',GradientType=0 );
 }
 
+div.comps-nav-btn:focus {
+	 box-shadow: 0 0 5px #51cbee;
+   border: 5px solid #51cbee;
+}
+
 .comps-nav-btn .label {
-	line-height: .85em;
+	line-height: 1em;
   font-size: 100px;
   float: left;
   min-width: 400px;
+	white-space: normal;
 }
 
 .comps-nav-btn .label.sm {
@@ -112,7 +121,7 @@ a:visited {
 }
 
 .comps-nav-btn .label .description {
-  color: #ccc;
+  color: white;
   font-size: 16px;
   /*font-family: Lucida Sans Unicode, Verdana, Arial, sans-serif;*/
   position: absolute;
@@ -129,23 +138,24 @@ a:visited {
   font-size: 47px;
   padding-right: 15px;
   color: #fff;
-  
+	width: 350px;
+	margin-bottom: 20px;
 }
 
 .comps-nav-btn .status.right-spacer{
-  width: 422px;
+  width: 469px;
 }
 
 .comps-nav-btn .stat {
   padding: 8px 0;
 }
 
-.comps-nav-btn .stat .available, .comps-nav-btn .stat .total{
+.comps-nav-btn .stat .total{
   padding: 0 8px;
 }
 
 .comps-nav-btn .stat .total {
-  color: #B2B2B2;
+  color: white;
 }
 
 .comps-wrapper .next {
@@ -210,6 +220,11 @@ background: #d5d5d5;
   height: 11px;
   position: absolute;
   float: left;
+}
+
+
+.comps-map-comp:focus {
+	background-color: blue;
 }
 
 .PC .comps-map-comp-border{

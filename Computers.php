@@ -35,7 +35,8 @@ define ("NAV_UPDATE", "SELECT loc.id as 'id',"
 
 define ("MAP", "SELECT comp.computer_name, comp.status, comp.left_pos, comp.top_pos, comp.computer_type"
     ." FROM compstatus as comp"
-    ." WHERE loc_id=:loc_id AND active=1");
+    ." WHERE loc_id=:loc_id AND active=1"
+		." ORDER BY computer_name");
 
 define ("MAP_UPDATE", "SELECT comp.computer_name, comp.status"
     ." FROM compstatus as comp"

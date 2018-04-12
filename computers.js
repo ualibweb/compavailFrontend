@@ -6,7 +6,13 @@ $(document).ready(function(){
 			$(this).click(function(){
 				var loc = $(this).attr('scope') == 0 ? $(this).attr('id') : $(this).attr('scope')+','+$(this).attr('id');
 				location.href = '/computers?query=' + $(this).attr('rel') + '&loc=' + loc + '&view=' + Computers.view;
-			})
+			});
+			$(this).keydown(function(e){		
+				if (e.keyCode == 13){
+					var loc = $(this).attr('scope') == 0 ? $(this).attr('id') : $(this).attr('scope')+','+$(this).attr('id');
+					location.href = '/computers?query=' + $(this).attr('rel') + '&loc=' + loc + '&view=' + Computers.view;		
+				}
+			});
 		}
 	});
 	
@@ -26,7 +32,7 @@ $(document).ready(function(){
 		
 		$.getJSON('/inc/compavail/Computers.php', {query: Computers.q, loc: Computers.loc}, function(data){
 			
-			if (Computers.q == 'map'){
+			if (Computers.q == 'map_update'){
 				updateMap(data);
 			}
 			else{

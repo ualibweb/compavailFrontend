@@ -74,7 +74,17 @@
 		
 	<div class="comps-map" style="<?php print $map['style']; ?> clear: both;">
 	  <?php foreach ($comps as $comp): ?>
-		<div class="comps-map-comp <?php print $comp['classes']; ?>" id="<?php print $comp['computer_name']; ?>" style="<?php print $comp['styles']; ?>">
+		
+					<?php if ((strpos($comp['classes'], 'open')) !== false): ?>
+		
+						<div class="comps-map-comp <?php print $comp['classes']; ?>" id="<?php print $comp['computer_name']; ?>" style="<?php print $comp['styles']; ?>" aria-label="<?php print $comp['computer_name']; ?> available computer" tabindex="0">
+					
+					<?php else : ?>
+										
+						<div class="comps-map-comp <?php print $comp['classes']; ?>" id="<?php print $comp['computer_name']; ?>" style="<?php print $comp['styles']; ?>" aria-label="<?php print $comp['computer_name']; ?> unavailable computer">
+						
+					<?php endif ?>
+		
 			<div class="comps-map-comp-border"></div>
 		</div>
 		<?php endforeach; ?>
