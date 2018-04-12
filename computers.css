@@ -117,7 +117,9 @@ div.comps-nav-btn:focus {
 }
 
 .comps-nav-btn .label.sm {
+	padding-left: 1em;
   font-size: 65px;
+	text-align: left;
 }
 
 .comps-nav-btn .label .description {
@@ -148,6 +150,7 @@ div.comps-nav-btn:focus {
 
 .comps-nav-btn .stat {
   padding: 8px 0;
+	margin-bottom: 20px;
 }
 
 .comps-nav-btn .stat .total{
