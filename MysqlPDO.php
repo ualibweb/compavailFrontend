@@ -2,7 +2,7 @@
 
 class MysqlPDO{
   protected static $user = "acs-read";
-  protected static $pass = "A1ReadACS222$!";
+  protected static $pass = "";
   protected static $database = "acs";
   protected static $host = 'localhost';
   
